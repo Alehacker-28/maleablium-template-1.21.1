@@ -1,4 +1,4 @@
-package com.alehacker.maleablium;
+package com.alehacker.random_biomes;
 
 import java.util.List;
 

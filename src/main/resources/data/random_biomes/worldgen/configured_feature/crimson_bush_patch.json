@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "tries": 32,
+    "xspread": 7,
+    "yspread": 3,
+    "zspread": 7,
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "random_biomes:crimson_bush"
+            }
+          }
+        }
+      },
+      "placement": []
+    }
+  }
+}
