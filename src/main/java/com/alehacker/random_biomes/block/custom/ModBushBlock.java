@@ -11,10 +11,10 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
-public class CrimsonBushBlock extends BushBlock{
+public class ModBushBlock extends BushBlock{
 
 
-    public CrimsonBushBlock(Properties properties) {
+    public ModBushBlock(Properties properties) {
         super(properties);
     }
 
@@ -27,11 +27,11 @@ public class CrimsonBushBlock extends BushBlock{
 
     @Override
     protected boolean mayPlaceOn(BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos) {
-        return state.is(ModBlocks.CRIMSON_GRASS) || super.mayPlaceOn(state, level, pos);
+        return state.is(ModBlocks.CRIMSON_GRASS.get());
     }
 
     @Override
-    public @NotNull MapCodec<CrimsonBushBlock> codec() {
-        return simpleCodec(CrimsonBushBlock::new);
+    public @NotNull MapCodec<ModBushBlock> codec() {
+        return simpleCodec(ModBushBlock::new);
     }
 }

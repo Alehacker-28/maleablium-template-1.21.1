@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "group": "crimson_stone",
+  "ingredient": {
+    "item": "random_biomes:crimson"
+  },
+  "result": {
+    "id": "random_biomes:crimson_stone"
+  }
+}

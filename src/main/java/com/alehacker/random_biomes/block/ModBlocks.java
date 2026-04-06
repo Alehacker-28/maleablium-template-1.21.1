@@ -1,8 +1,9 @@
 package com.alehacker.random_biomes.block;
 
 import com.alehacker.random_biomes.RandomBiomesMod;
-import com.alehacker.random_biomes.block.custom.CrimsonBushBlock;
-import com.alehacker.random_biomes.block.custom.CrimsonGrassBlock;
+import com.alehacker.random_biomes.block.custom.ModBushBlock;
+import com.alehacker.random_biomes.block.custom.ModVineGrowBlock;
+import com.alehacker.random_biomes.block.custom.ModSpreadingBlock;
 import com.alehacker.random_biomes.items.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -20,42 +21,51 @@ public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(RandomBiomesMod.MOD_ID);
 
-    //Crimson Block
-    public static final DeferredBlock<Block> CRIMSON = registerBlock("crimson",
-        () ->  new Block(BlockBehaviour.Properties.of()
-            .mapColor(MapColor.COLOR_RED)
-            .strength(2f,6f)
-            .sound(SoundType.STONE)
-            .requiresCorrectToolForDrops()
-        ));
+    public static final DeferredBlock<Block> CRIMSON_COBBLESTONE = registerBlock("crimson_cobblestone",
+        () ->  new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE)));
 
-    //Crimson Grass
     public static final DeferredBlock<Block> CRIMSON_GRASS = registerBlock("crimson_grass",
-        () -> new CrimsonGrassBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK)
-            .mapColor(MapColor.COLOR_RED)
-            .strength(1f)
-            .sound(SoundType.GRAVEL)
-            .requiresCorrectToolForDrops()
-        ));
+        () -> new ModSpreadingBlock(BlockBehaviour.Properties.of()
+                .mapColor(MapColor.COLOR_RED)
+                .strength(0.6f)
+                .sound(SoundType.GRASS)
+                .randomTicks()));
 
-    //Crimson Stone
     public static final DeferredBlock<Block> CRIMSON_STONE = registerBlock("crimson_stone",
-        () -> new Block(BlockBehaviour.Properties.of()
-            .mapColor(MapColor.COLOR_RED)
-            .strength(1.5f,6f)
-            .sound(SoundType.STONE)
-            .requiresCorrectToolForDrops()
-        ));
+        () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
 
-    //Crimson Bush
     public static final DeferredBlock<Block> CRIMSON_BUSH = registerBlock("crimson_bush",
-        () -> new CrimsonBushBlock(BlockBehaviour.Properties.of()
-            .mapColor(MapColor.COLOR_RED)
-            .noCollission()
-            .noOcclusion()
-            .sound(SoundType.GRASS)
-            .instabreak()
-        ));
+        () -> new ModBushBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SHORT_GRASS)));
+
+    public static final DeferredBlock<Block> CRIMSON_VINES = registerBlock("crimson_vines",
+            () -> new ModVineGrowBlock(BlockBehaviour.Properties.of()
+                    .randomTicks()
+                    .sound(SoundType.WEEPING_VINES)
+                    .instabreak()
+            ));
+
+
+//    public static final DeferredBlock<Block> CRIMSON_LOG = registerBlock("crimson_log",
+//        () -> new ModLogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
+//
+//    public static final DeferredBlock<Block> CRIMSON_WOOD = registerBlock("crimson_wood",
+//        () -> new ModLogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
+//
+//    public static final DeferredBlock<Block> STRIPPED_CRIMSON_LOG = registerBlock("stripped_crimson_log",
+//        () -> new ModLogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
+//
+//    public static final DeferredBlock<Block> STRIPPED_CRIMSON_WOOD = registerBlock("stripped_crimson_wood",
+//        () -> new ModLogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
+//
+//    public static final DeferredBlock<Block> CRIMSON_PLANKS = registerBlock("crimson_planks",
+//        () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+//
+//    public static final DeferredBlock<Block> CRIMSON_LEAVES = registerBlock("crimson_leaves",
+//        () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
+
+
+
+
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

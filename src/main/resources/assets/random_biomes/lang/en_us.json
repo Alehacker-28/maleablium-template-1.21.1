@@ -3,10 +3,14 @@
   "block.random_biomes.example_block": "Example Block",
   "item.random_biomes.example_item": "Example Item",
 
-  "block.random_biomes.crimson": "Crimson Block",
+  "item.random_biomes.crimson_seeds": "Crimson Seeds",
+
+  "block.random_biomes.crimson_cobblestone": "Crimson Cobblestone",
   "block.random_biomes.crimson_bush": "Crimson Bush",
   "block.random_biomes.crimson_stone": "Crimson Stone",
   "block.random_biomes.crimson_grass": "Crimson Grass",
+  "block.random_biomes.crimson_vines": "Crimson Vines",
+
   "creativetab.random_biomes.crimson_blocks": "Crimson Biome Blocks",
 
   "random_biomes.configuration.title": "Random Biomes Configs",

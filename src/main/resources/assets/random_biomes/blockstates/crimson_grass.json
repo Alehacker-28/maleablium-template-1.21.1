@@ -1,7 +1,21 @@
 {
-  "variants" : {
-    "": {
-      "model" : "random_biomes:block/crimson_grass"
-    }
+  "variants": {
+    "": [
+      {
+        "model": "random_biomes:block/crimson_grass"
+      },
+      {
+        "model": "random_biomes:block/crimson_grass",
+        "y": 90
+      },
+      {
+        "model": "random_biomes:block/crimson_grass",
+        "y": 180
+      },
+      {
+        "model": "random_biomes:block/crimson_grass",
+        "y": 270
+      }
+    ]
   }
 }

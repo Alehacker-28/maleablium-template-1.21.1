@@ -17,13 +17,15 @@ public class ModCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> CRIMSON_BLOCKS_TAB = CREATIVE_MODE_TAB.register("crimson_blocks_tab",
             () -> CreativeModeTab.builder()
-                    .icon(() -> new ItemStack(ModBlocks.CRIMSON.get()))
+                    .icon(() -> new ItemStack(ModBlocks.CRIMSON_COBBLESTONE.get()))
                     .title(Component.translatable("creativetab.random_biomes.crimson_blocks"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModBlocks.CRIMSON);
+                        output.accept(ModBlocks.CRIMSON_COBBLESTONE);
                         output.accept(ModBlocks.CRIMSON_GRASS);
                         output.accept(ModBlocks.CRIMSON_STONE);
                         output.accept(ModBlocks.CRIMSON_BUSH);
+                        output.accept(ModItems.CRIMSON_SEEDS);
+                        output.accept(ModBlocks.CRIMSON_VINES);
                     })
 
                     .build());
